@@ -1,0 +1,105 @@
+
+body{
+    background-color: aliceblue;
+}
+.container{
+    grid-template-columns: repeat(4,1fr);
+    width: 80vw;
+    margin: 80px auto; 
+    min-width: .70svh;
+    padding: 20px;
+    display: grid ;
+    gap: 20px;
+    min-height: 70svh;
+}
+#item1{
+    grid-column: span 2 ;
+}
+.container>.item1:nth-child(1){
+grid-column: span 2 ;
+}
+.container>.item2:nth-child(2){
+grid-area: tow;
+}
+.container>.item3:nth-child(3){
+grid-area:three ;
+}
+.container>#item4:nth-child(4){
+grid-column: span 2;
+}
+.container>#item5:nth-child(5){
+grid-column-start: 4;
+grid-row-start: 1;
+grid-row-end: span 2;
+}
+
+#item1{
+    background-color: rgb(120, 66, 158);
+    color:white;
+
+}
+#a,#b,#c,#d,#e{
+    font-size: 25px;
+    padding-bottom: 15px;
+    border-radius: 20px;
+
+}
+#item2{
+    background-color: rgb(99, 100, 99);
+    color: white;
+}
+#item3{
+    background-color:white;
+    color: black ;
+}
+#item4{
+    background-color:black;
+    color: white;
+
+}
+#item5{
+    background-color:bisque;
+    color:black;
+
+}
+#item1,#item2,#item3,#item4,#item5{
+    padding: 10px;
+    border-radius: 20px;
+    font-size: 20px;
+}
+.item1,.item2,.item3,.item4,.item5{
+    border-radius: 20px;
+    padding: 20px;
+    margin-inline: 20px;
+    margin: 10;
+}
+#image1{
+    border-radius:100% ;
+}
+@media screen and (max-width: 375px) {
+    body{
+      grid-template-columns: 1fr; 
+    }
+  
+    .container {
+      grid-template-columns: 1fr; 
+      grid-template-rows: auto; /* Allow rows to adjust automatically */
+    }
+  
+    .container>#item1:nth-child(1),
+    .container>#item2:nth-child(2),
+    .container>#item3:nth-child(3),
+    .container>#item4:nth-child(4) {
+      grid-column: auto; /* Remove specific grid column spans */
+    }
+  
+    .container>item5 {
+      grid-column: auto; /* Ensure aside comes after main content */
+      padding: 0; 
+      margin-top: 20px;
+    }
+    .container>item5 {
+        margin-top: 0;
+    
+    }
+}
